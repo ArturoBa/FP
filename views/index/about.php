@@ -32,7 +32,6 @@
             }
             
             .second{
-
                 padding: 60px 50px;
                 background-color: lightgray;
             }
