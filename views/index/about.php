@@ -82,7 +82,7 @@
         <div class="let">
             <h4><strong>Nuestro objetivo</strong></h4>
         <p>Hacer m&aacute;s f&aacute;cil la compra de bicicletas alrededor del mundo. </p>
-        <p>Hacer ejercicio, ser feliz y montar bicicletas tienen una cosa en com&uacute;n: <em>las hace uno mismo.</></p>
+        <p>Hacer ejercicio, ser feliz y montar bicicletas tienen una cosa en com&uacute;n: <em>las hace uno mismo.</em></p>
         </div>
     </div>
     
