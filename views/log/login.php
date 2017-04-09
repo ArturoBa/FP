@@ -1,4 +1,31 @@
-<?php ?>
+<?php 
+    //Variables
+    $msj = "";
+    
+    if($_POST){
+        //Variable
+        $email = $_POST["email"];
+        $contrasena = md5($_POST["contrasena"]);
+        
+        //SQL
+        $sql = "select * from usuarios where email = ? and contrasena = ?";
+        $CI =& get_instance();
+        $rs = $CI->db->query($sql, array($email, $contrasena));
+        $rs = $rs->result();
+        
+        //Valida si los datos concuerdan, si no, se le pone mensaje de error
+        if(count($rs) > 0){
+            //Si los datos concuerdan: inicia session, setea los datos de sesion y redirecciona a la pagina principal con usuario
+            session_start();
+            $_SESSION["user"] = $rs[0];
+            redirect("user/");
+        }
+        else{
+            //Mensaje de error
+            $msj = "Usuario o clave no valido";
+        }
+    }
+?>
 <html>
 <head>
 	<title>ATOMBIKE- Login</title>
@@ -61,6 +88,10 @@
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-lg" style="width: 100%">Acceder</button>
+                </div>
+                
+                <div style="color: red">
+                    <h3><?php echo $msj; ?></h3>
                 </div>
 
             </form>

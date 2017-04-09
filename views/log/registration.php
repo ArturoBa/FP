@@ -1,4 +1,20 @@
-<?php ?>
+<?php 
+    if($_POST){
+        //Variables
+        $nombre = $_POST["nombre"];
+        $email = $_POST["email"];
+        $contrasena = md5($_POST["contrasena"]);
+        
+        //SQL
+        $CI =& get_instance();
+        $CI->db->query("insert into usuarios (nombre, email, contrasena) values('{$nombre}', '{$email}', '{$contrasena}')");
+        
+        //Valida que se inserto con exito el usuario y lo redirecciona al login
+        if($this->db->affected_rows() > 0){
+            redirect("home/login");
+        }
+    }
+?>
 <html>
 <head>
 	<title>ATOMBIKE- Registrarse</title>
@@ -13,17 +29,17 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 	
-	<style>
-		body{
-			background: url("<?php echo base_url(''); ?>/res/regfondo.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-        
-        label{
-            color: black;
-        }
-	</style>
+        <style>
+            body{
+                background: url("<?php echo base_url(''); ?>/res/regfondo.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            label{
+                color: black;
+            }
+        </style>
 </head>
 <body>
     <!--Todo el menu esta desde aqui-->
