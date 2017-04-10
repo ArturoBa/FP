@@ -36,4 +36,12 @@ class Home extends CI_Controller {
     public function about(){
         $this->load->view('index/about');
     }
+    
+    public function info(){
+        $this->load->view("index/info");
+    }
+    
+    public function category(){
+        $this->load->view("index/categoria");
+    }
 }

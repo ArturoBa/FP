@@ -42,7 +42,23 @@ class User extends CI_Controller {
         $this->load->view("index/upload-logged");
     }
     
+    public function edit(){
+        $this->load->view("index/edit-logged");
+    }
+    
+    public function editAnuncio(){
+        $this->load->view("index/edit-data");
+    }
+    
     public function about(){
         $this->load->view('index/about-logged');
+    }
+    
+    public function info(){
+        $this->load->view("index/info-logged");
+    }
+    
+    public function category(){
+        $this->load->view("index/categoria-logged");
     }
 }
