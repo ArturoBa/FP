@@ -38,7 +38,11 @@ class User extends CI_Controller {
         $this->load->view("index/account-logged");
     }
     
+    public function upload(){
+        $this->load->view("index/upload-logged");
+    }
+    
     public function about(){
-        $this->load->view('index/about');
+        $this->load->view('index/about-logged');
     }
 }
