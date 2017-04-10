@@ -1,0 +1,15 @@
+Estructura del proyecto:
+
+	Dado que por cada anuncio el usuario podrá subir hasta cinco fotos, es necesario que cada anuncio
+	tenga su carpeta. A su vez, dado que son usuarios diferentes, cada usuario tendrá una carpeta que
+	contenga subcarpetas con el nombre de su anuncio, éstas últimas tendrán las fotos de ese anuncio.
+	Los detalles del anuncio se guardarán en una base de datos con cada registro de nombre del anuncio,
+	un FOREIGN KEY con el email del usuario (desde este se accederan a los datos correspondientes).
+
+	Concepto: 
+		[Folder: Anuncios]
+			[Folder: nombreUsuario]
+				[Subfolders: nombreAnuncios]
+					[Datos: fotosAnuncio]
+
+		[FK: emailUsuario] -> [Campo: tituloAnuncio] [Campo: descripcionAnuncio] [Campo: categoria] [Campo: precioAnuncio]
