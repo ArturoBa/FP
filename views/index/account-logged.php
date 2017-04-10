@@ -4,16 +4,15 @@
         //Variables
         $nombre = $_SESSION["user"]->nombre;
 
-        //SQL
-        $CI =& get_instance();
-        $rs = $CI->db->query("select * from usuarios where id = ?", $_SESSION["user"]->id);
-        $rs = $rs->result();
-
             if($_POST){
-                $newContra = md5($_POST["nombre"]);
-                $newName = $_POST["contrasena"];
+                //SQL
+                $CI =& get_instance();
                 
-                $CI->db->query("update `usuarios` set nombre= '{$newName}' and contrasena = '{$newContra}' where id = {$rs[0]->id}");
+                //Variables
+                $newContra = md5($_POST["contrasena"]);
+                $newName = $_POST["nombre"];
+                
+                $CI->db->query("UPDATE `usuarios` SET `nombre`= '{$newName}', `contrasena`= '{$newContra}' WHERE id = {$_SESSION["user"]->id}");
                 $_SESSION["user"]->nombre = $_POST["nombre"];
             }
 ?>
